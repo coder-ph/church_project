@@ -1,7 +1,9 @@
 from flask import Blueprint, jsonify
 
-main_pb = Blueprint("main", __name__)
+main_bp = Blueprint("main", __name__)
 
-@main_pb.route("/")
+@main_bp.route("/")
 def home():
-    return jsonify({"message: Church Backend Running"})
+    return jsonify({
+        "message": "Church Backend Running"
+    })
