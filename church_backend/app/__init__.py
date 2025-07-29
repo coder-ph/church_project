@@ -2,10 +2,12 @@ from flask import Flask
 from .extensions import db, migrate
 from .config.settings import config
 from app.routes.main import main_bp
+from .utils.logger import setup_logger
 import os
 from dotenv import load_dotenv
 load_dotenv()
 
+logger = setup_logger()
 def create_app():
     app = Flask(__name__)
     env = os.getenv("FLASK_ENV", "development")
@@ -17,5 +19,6 @@ def create_app():
 
     
     app.register_blueprint(main_bp)
+    logger.info("app initialized with env: %s", env)
 
     return app
