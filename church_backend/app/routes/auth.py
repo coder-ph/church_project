@@ -16,3 +16,20 @@ def register():
     db.session.commit()
     return jsonify(message="User registered")
 
+@auth_bp.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    try:
+        user = User.query.filter_by(email=data['email']).first()
+        if user and user.check_password(data['password']):
+            token = create_access_token(identity={
+                "id": user.id,
+                "role": user.role
+            })
+            return jsonify(token=token), 200
+        else:
+            return jsonify(message="invalid email or password"), 401
+    except:
+        raise ValueError
+
+    
