@@ -9,6 +9,9 @@ class Config:
 
     JWT_SECRET_KEY= os.getenv("JWT_SECRET_KEY")
 
+    GOOGLE_OAUTH_CLIENT_ID=os.getenv("GOOGLE_OAUTH_CLIENT_ID")
+    GOOGLE_OAUTH_CLIENT_SECRET=os.getenv("GOOGLE_OAUTH_CLIENT_SECRET")
+
 class DevelopmentConfig:
     DEBUG = True
 

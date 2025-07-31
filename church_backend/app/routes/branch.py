@@ -21,3 +21,9 @@ def create_branch():
         
     except:
         return jsonify(message='An error occured please try again')
+    
+@branch_bp.route('/', methods=['GET'])
+@role_required('super-admin','admin')
+def get_branches():
+    branches = Branch.query.all()
+    return jsonify({'id':b.id, 'name':b.name} for b in branches)

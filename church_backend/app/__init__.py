@@ -3,6 +3,7 @@ from .extensions import db, migrate
 from .config.settings import config
 from app.routes.main import main_bp
 from flask_jwt_extended import JWTManager
+from routes.oauth import google_bp
 from .utils.logger import setup_logger
 import os
 from dotenv import load_dotenv
@@ -20,6 +21,7 @@ def create_app():
 
     
     app.register_blueprint(main_bp)
+    app.register_blueprint(google_bp, url_prefix='/login')
     logger.info("app initialized with env: %s", env)
 
     return app

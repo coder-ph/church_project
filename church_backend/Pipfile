@@ -11,6 +11,7 @@ flask = "*"
 python-dotenv = "*"
 flask-bcrypt = "*"
 flask-jwt-extended = "*"
+flask-dance = "*"
 
 [dev-packages]
 
