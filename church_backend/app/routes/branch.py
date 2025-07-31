@@ -27,3 +27,16 @@ def create_branch():
 def get_branches():
     branches = Branch.query.all()
     return jsonify({'id':b.id, 'name':b.name} for b in branches)
+
+@branch_bp.route('/<int: branch_id>', methods=['PUT'])
+@role_required('super-admin')
+def branch_update(branch_id):
+    branch = Branch.query.get_or_404(branch_id)
+    data = request.get_json()
+
+    branch.name = data.get('name', branch.name)
+    branch.location = data.get('location', branch.location)
+    branch.timezone =data.get('timezone', branch.timezone)
+
+    db.session.commit()
+    return jsonify(message="Branch updated successfully")
