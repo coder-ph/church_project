@@ -1,1 +1,6 @@
 .env
+
+instance/
+*db
+.log
+migrations/
