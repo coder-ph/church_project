@@ -7,7 +7,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     full_name = db.Column(db.String, nullable=False)
     email = db.Column(db.String, nullable=False, unique=True)
-    phone_number = db.Column(db.string, nullable=False, unique=True)
+    phone_number = db.Column(db.String, nullable=False, unique=True)
     password_hash = db.Column(db.String, nullable=False)
     role = db.Column(db.String, nullable=False, default='member')
 

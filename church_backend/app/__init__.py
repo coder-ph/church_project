@@ -3,7 +3,7 @@ from .extensions import db, migrate
 from .config.settings import config
 from app.routes.main import main_bp
 from flask_jwt_extended import JWTManager
-from routes.oauth import google_bp
+from .routes.oauth import google_bp
 from .utils.logger import setup_logger
 import os
 from dotenv import load_dotenv

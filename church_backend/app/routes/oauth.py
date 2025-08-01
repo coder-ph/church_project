@@ -1,10 +1,10 @@
 from flask import Blueprint, jsonify, redirect, url_for
 from flask_dance.contrib.google import make_google_blueprint, google
-from models.user import User
+from app.models.user import User
 from app import db
 from flask_jwt_extended import create_access_token
 from ..config.settings import Config
-from python_dotenv import load_dotenv
+from dotenv import load_dotenv
 load_dotenv()
 import os
 
