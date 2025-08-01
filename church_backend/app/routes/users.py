@@ -14,6 +14,7 @@ def update_me():
     data = request.get_json()
     user.full_name = data.get('full_name', user.full_name)
     user.phone = data.get("phone", user.phone)
+    
 
     db.session.commit()
     return jsonify(message='Profile updated successfully'), 200
