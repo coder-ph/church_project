@@ -3,6 +3,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 from utils.decorators import role_required
 from app.models.event_contribution import EventContribution
 from app import db
+
 import Logger
 logger = Logger()
 
@@ -37,3 +38,18 @@ def get_event_contributions(event_id):
         "balance": contrib.balance,
         "status": contrib.status.value
     } for contrib in contributions])
+    
+@event_contrib_bp.route('/contributions/<int:contrib_id>/update', methods=['POST'])
+@jwt_required()
+@role_required('super-admin', 'admin')
+
+def update_contribution(contrib_id):
+    data = request.get_json()
+    amount = data.get('amount', 0.0)
+    
+    contribution = EventContribution.query.get_or_404(contrib_id)
+    contribution.EventContribution.update_payment(amount)
+    
+    db.session.commit()
+    
+    return jsonify({'message':'Contribution updated', 'new_status': contribution.status.value})

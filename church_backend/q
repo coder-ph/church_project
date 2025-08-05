@@ -1,0 +1,7 @@
+                              List of schemas
+  Name  |    Owner    |     Access privileges      |      Description       
+--------+-------------+----------------------------+------------------------
+ public | church_user | church_user=UC/church_user+| standard public schema
+        |             | =U/church_user             | 
+(1 row)
+

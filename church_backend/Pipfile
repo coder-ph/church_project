@@ -12,6 +12,7 @@ psycopg2-binary = "*"
 flask-jwt-extended = "*"
 flask-bcrypt = "*"
 flask-dance = "*"
+requests = "*"
 
 [dev-packages]
 
