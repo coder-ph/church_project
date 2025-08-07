@@ -5,7 +5,7 @@ class EventBranchAssignment(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('events.id'), nullable=False)
-    branch_id = db.Column(db.Inteher, db.ForeignKey('branches.id'), nullable=False)
+    branch_id = db.Column(db.Integer, db.ForeignKey('branches.id'), nullable=False)
     
-    event = db.relationship('BigEvent', back_populates='assignments')
+    event = db.relationship('Event', back_populates='assignments')
     branch = db.relationship('Branch')

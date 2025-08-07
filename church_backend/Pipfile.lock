@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "25374fce7bc3371d8dcb92700da37d2289930dab1108ad74e442ac8fc49043f6"
+            "sha256": "841517dd301e4d32b91584995e70002e75427a90ed32772bcf9307fb133f83a6"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -202,6 +202,15 @@
             ],
             "markers": "python_version >= '3.10'",
             "version": "==8.2.1"
+        },
+        "faker": {
+            "hashes": [
+                "sha256:386fe9d5e6132a915984bf887fcebcc72d6366a25dd5952905b31b141a17016d",
+                "sha256:8315d8ff4d6f4f588bd42ffe63abd599886c785073e26a44707e10eeba5713dc"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.9'",
+            "version": "==37.5.3"
         },
         "flask": {
             "hashes": [
@@ -602,6 +611,14 @@
             ],
             "markers": "python_version >= '3.9'",
             "version": "==4.14.1"
+        },
+        "tzdata": {
+            "hashes": [
+                "sha256:1a403fada01ff9221ca8044d701868fa132215d84beb92242d9acd2147f667a8",
+                "sha256:b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+            ],
+            "markers": "python_version >= '2'",
+            "version": "==2025.2"
         },
         "urllib3": {
             "hashes": [

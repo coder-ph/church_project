@@ -1,5 +1,8 @@
 from datetime import datetime
 from app import db
+from enum import Enum
+import uuid
+from sqlalchemy.dialects.postgresql import UUID
 
 class ContributionStatus(Enum):
     NOT_STARTED = "Not Started"
@@ -9,9 +12,9 @@ class EventContribution(db.Model):
     __tablename__ = 'event_contributions'
     
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    user_id = db.Column(UUID(as_uuid=True), db.ForeignKey('users.id'), nullable=False)
     event_id = db.Column(db.Integer, db.ForeignKey('events.id'), nullable=False)
-    amount_expected = db.Column(db.Float, nulllable=False)
+    amount_expected = db.Column(db.Float, nullable=False)
     amount_paid = db.Column(db.DateTime, default=datetime.utcnow)
     balance = db.Column(db.Float, default=0.0)
     

@@ -13,6 +13,7 @@ flask-jwt-extended = "*"
 flask-bcrypt = "*"
 flask-dance = "*"
 requests = "*"
+faker = "*"
 
 [dev-packages]
 
