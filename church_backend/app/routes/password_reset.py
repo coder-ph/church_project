@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from itsdangerous import URLSafeTimedSerializer
-from models.user import User
+from app.models.user import User
 from app import db
 
 reset_bp =Blueprint('reset', __name__)

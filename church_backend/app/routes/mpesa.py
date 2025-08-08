@@ -1,13 +1,13 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import get_jwt_identity, jwt_required
-from services.mpesa_services import get_mpesa_token
+from app.services.mpesa_services import get_mpesa_token
 import requests, datetime, base64, os
-from models.user import User
-from models.logs import ApiLog
+from app.models.user import User
+from app.models.logs import ApiLog
 
-mpesa_router = Blueprint('mpesa_router', __name__)
+mpesa_bp = Blueprint('mpesa_router', __name__)
 
-@mpesa_router.route('/stkpush', methods=['POST'])
+@mpesa_bp.route('/stkpush', methods=['POST'])
 @jwt_required()
 def stk_push():
     user_id = get_jwt_identity()

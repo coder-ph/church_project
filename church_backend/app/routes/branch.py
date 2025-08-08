@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
-from models.branch import Branch
+from app.models.branch import Branch
 from app import db
-from utils.decorators import role_required
+from app.utils.decorators import role_required
 
 branch_bp = Blueprint("branch", __name__, url_prefix='/branches')
 
@@ -28,7 +28,7 @@ def get_branches():
     branches = Branch.query.all()
     return jsonify({'id':b.id, 'name':b.name} for b in branches)
 
-@branch_bp.route('/<int: branch_id>', methods=['PUT'])
+@branch_bp.route('/<int:branch_id>', methods=['PUT'])
 @role_required('super-admin')
 def branch_update(branch_id):
     branch = Branch.query.get_or_404(branch_id)

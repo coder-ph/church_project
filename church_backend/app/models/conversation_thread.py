@@ -17,3 +17,5 @@ class ConversationThread(db.Model):
 
     created_by_user = db.relationship("User", backref="threads")
     branch = db.relationship("Branch", backref="threads")
+    
+    hashtags = db.relationship("Hashtag", back_populates="thread", cascade="all, delete-orphan")

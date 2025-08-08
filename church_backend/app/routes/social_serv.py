@@ -1,9 +1,12 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from app import db
-from models.social import ConversationThread, Comment, Like, Hashtag
-from models.user import User
-from models.branch import Branch
+from app.models.conversation_thread import ConversationThread
+from app.models.comment import Comment
+from app.models.like import Like
+from app.models.hashtag import Hashtag
+from app.models.user import User
+from app.models.branch import Branch
 
 social_bp = Blueprint('social', __name__, url_prefix='/social')
 

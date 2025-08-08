@@ -1,5 +1,6 @@
 from flask import Flask
 from .extensions import db, migrate
+from .routes import init_routes
 from .config.settings import config
 from flask_jwt_extended import JWTManager
 from .utils.logger import setup_logger
@@ -20,6 +21,7 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
 
+    init_routes(app)
     
     from .routes.main import main_bp
     from .routes.oauth import google_bp

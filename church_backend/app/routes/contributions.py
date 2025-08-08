@@ -1,14 +1,13 @@
 from flask import Blueprint, jsonify, request
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from utils.decorators import role_required
+from app.utils.decorators import role_required
 from app.models.event_contribution import EventContribution
 from app import db
-
-import Logger
-logger = Logger()
+from app.utils.logger import setup_logger
+logger = setup_logger()
 
 event_contrib_bp = Blueprint("event_contributions", __name__, url_prefix='/event_contributions')
-@event_contrib_bp('/my-contributions', methods=['GET'])
+@event_contrib_bp.route('/my-contributions', methods=['GET'])
 @jwt_required()
 def get_my_contributions():
     current_user = get_jwt_identity()

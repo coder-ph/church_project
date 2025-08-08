@@ -14,8 +14,8 @@ google_bp = make_google_blueprint(
     scope = ['profile', 'email'],
     redirect_to="auth.oauth_callback"
 )
-oauth_routes = Blueprint("/auth", __name__)
-@oauth_routes.route("/auth/callback")
+oauth_bp = Blueprint("/auth", __name__)
+@oauth_bp.route("/auth/callback")
 def oauth_callback():
     resp = google.get('/oauth2/v2/userinfo')
     info = resp.json()
