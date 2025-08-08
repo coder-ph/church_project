@@ -1,4 +1,4 @@
-from app import db
+from app.extensions import db
 
 class EventBranchAssignment(db.Model):
     __tablename__ = 'event_branch_assignments'

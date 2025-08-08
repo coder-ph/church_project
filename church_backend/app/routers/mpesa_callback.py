@@ -1,10 +1,10 @@
-from routes.mpesa import mpesa_router
+from routes.mpesa import mpesa_bp
 from flask import jsonify, request
 from models.event_contribution import EventContribution
 from models.transactions import Transaction
 from app import db
 
-@mpesa_router.route('/callback', methods=['POST'])
+@mpesa_bp.route('/callback', methods=['POST'])
 def stk_callback():
     data = request.get_json()
     

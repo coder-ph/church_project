@@ -1,0 +1,15 @@
+
+2025-08-08 15:06:59.283745 - CALLBACK RECEIVED:
+{'Body': {'stkCallback': {'MerchantRequestID': 'd2c6-4205-830c-9d5d446e2e8070133', 'CheckoutRequestID': 'ws_CO_080820251506568740786838', 'ResultCode': 1037, 'ResultDesc': 'DS timeout user cannot be reached'}}}
+
+2025-08-08 15:07:01.475213 - CALLBACK RECEIVED:
+{'Body': {'stkCallback': {'MerchantRequestID': 'd2c6-4205-830c-9d5d446e2e8070133', 'CheckoutRequestID': 'ws_CO_080820251506568740786838', 'ResultCode': 1037, 'ResultDesc': 'DS timeout user cannot be reached'}}}
+
+2025-08-08 15:07:04.534658 - CALLBACK RECEIVED:
+{'Body': {'stkCallback': {'MerchantRequestID': 'd2c6-4205-830c-9d5d446e2e8070133', 'CheckoutRequestID': 'ws_CO_080820251506568740786838', 'ResultCode': 1037, 'ResultDesc': 'DS timeout user cannot be reached'}}}
+
+2025-08-08 15:13:30.355832 - CALLBACK RECEIVED:
+{'Body': {'stkCallback': {'MerchantRequestID': 'a71d-4f69-bf89-6e6da87fe1e339462', 'CheckoutRequestID': 'ws_CO_080820251513199740786838', 'ResultCode': 1032, 'ResultDesc': 'Request Cancelled by user'}}}
+
+2025-08-08 15:18:30.276304 - CALLBACK RECEIVED:
+{'Body': {'stkCallback': {'MerchantRequestID': 'a71d-4f69-bf89-6e6da87fe1e339502', 'CheckoutRequestID': 'ws_CO_080820251518180748942906', 'ResultCode': 0, 'ResultDesc': 'The service request is processed successfully', 'CallbackMetadata': {'Item': [{'Name': 'Amount', 'Value': 1}, {'Name': 'MpesaReceiptNumber', 'Value': 'TH82GT31TY'}, {'Name': 'Balance', 'Value': '{Amount={CurrencyCode=KES, MinimumAmount=10761300, BasicAmount=107613.00}}'}, {'Name': 'TransactionDate', 'Value': 20250808151829}, {'Name': 'PhoneNumber', 'Value': 254748942906}]}}}}

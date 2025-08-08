@@ -1,4 +1,4 @@
-from app import db
+from app.extensions import db
 import datetime
 
 
@@ -11,7 +11,7 @@ class ApiLog(db.Model):
     timestamp = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
     @staticmethod
-    def log(endpoint, request_body, response_body):
+    def log(endpoint, request_body, response_body=None):
         db.session.add(ApiLog(
             endpoint=endpoint,
             request_body=request_body,

@@ -1,4 +1,4 @@
-from app import db
+from app.extensions import db
 
 class church(db.Model):
     __tablename__ = 'church'

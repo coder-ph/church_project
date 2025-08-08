@@ -1,4 +1,4 @@
-from app import db
+from app.extensions import db
 from flask_bcrypt import generate_password_hash, check_password_hash
 import uuid
 from sqlalchemy.dialects.postgresql import UUID

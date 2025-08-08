@@ -1,6 +1,6 @@
 
 
-from app import db
+from app.extensions import db
 import uuid
 from sqlalchemy.dialects.postgresql import JSON
 
