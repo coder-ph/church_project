@@ -16,11 +16,11 @@ class Transaction(db.Model):
     checkout_request_id = db.Column(db.String)
     merchant_request_id = db.Column(db.String)
     
-    # user_id = db.Column(UUID(as_uuid=True), db.ForeignKey('users.id'), nullable=True)
-    # event_id = db.Column(db.Integer, db.ForeignKey('events.id'), nullable=True)
+    user_id = db.Column(UUID(as_uuid=True), db.ForeignKey('users.id'), nullable=True)
+    event_id = db.Column(db.Integer, db.ForeignKey('events.id'), nullable=True)
     
     status = db.Column(db.String, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
-    # user = db.relationship('User', backref='transactions')
-    # event = db.relationship('Event', backref='transactions')
+    user = db.relationship('User', backref='transactions')
+    event = db.relationship('Event', backref='transactions')
